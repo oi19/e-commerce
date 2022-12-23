@@ -1,7 +1,6 @@
 # E-Commerce ![Django](https://github.com/ESWZY/cs50web-final-project/workflows/Django%20CI/badge.svg)
 
-  ## An e-commerce Mobile Responsive Website powered by [Django](https://www.djangoproject.com/) using [Python](https://www.python.org/) ,in which a user can view 
-  ## a watch list , craete & upload new item and delete it  as well as some other features :
+  ## An e-commerce Mobile Responsive Website powered by [Django](https://www.djangoproject.com/) using [Python](https://www.python.org/) ,in which a user can view a watch list , craete & upload new item and delete it  as well as some other features :
    - add item to favourites 
    - remove item from favourites
    - place bids
