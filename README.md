@@ -1,12 +1,12 @@
 # E-Commerce ![Django](https://github.com/ESWZY/cs50web-final-project/workflows/Django%20CI/badge.svg)
 
   ## An e-commerce Mobile Responsive Website powered by [Django](https://www.djangoproject.com/) using [Python](https://www.python.org/) ,in which user can:
-    2- add item to favourites 
-    3-remove item from favourites
-    4-place bids
-    5-close bids
-    6-add comments
-    7-view your favourites list
+   - add item to favourites 
+   - remove item from favourites
+   - place bids
+   - close bids
+   - add comments
+   - view your favourites list
 
 # Project Structure
 
