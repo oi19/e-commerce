@@ -1,0 +1,412 @@
+html,
+body {
+    height: 100%;
+    background: black;
+    color: rgb(152 152 152);
+}
+
+
+/* adding flexbox attributes to the nav container and some other css attributes*/
+.nav-container {
+    /* layout and felxing attributes to the container*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* spacing*/
+    margin-top: 15px;
+
+    /* colors*/
+    color: rgb(152 152 152);
+    /* typography*/
+    text-decoration: none;
+}
+
+
+.nav-auth {
+
+    justify-content: center;
+    padding: 10px;
+    margin-left: 10px;
+
+}
+
+.nav-links1 .nav-links2 {
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-item {
+    margin: auto;
+    list-style-type: none;
+}
+
+ul>.nav-item {
+    list-style-type: none;
+}
+
+a {
+    color: rgb(152 152 152);
+}
+
+/* display the linkes only if the width is more than 1200*/
+@media only screen and (max-width: 1200px) {
+    .nav-link {
+
+        display: none;
+    }
+}
+
+
+a:hover {
+    color: white;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid #3e3f3f;
+}
+
+/* display the dropdown menu only if the width is less than 1201*/
+
+@media only screen and (min-width: 1201px) {
+    .dropdown-show {
+        display: none;
+    }
+}
+
+.dropdown-show {
+    margin-right: 20px;
+    justify-content: right;
+}
+
+
+
+.dropdown-toggle:hover {
+    text-decoration: none;
+
+}
+
+.dropdown-menu {
+    display: none;
+    justify-content: end;
+    min-width: 0;
+    float: none;
+    position: unset;
+    text-decoration: none;
+    width: 100px;
+}
+
+.dropdown-menu>ul>li {
+    padding-left: 5px;
+    padding-top: 1px;
+    list-style-type: none;
+}
+
+.dropdown-menu>li>a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* the nav bar is done */
+/* acive listings not finished yet */
+/* log in and registeration are on the process */
+/* whatlist is same as active listings */
+/* create listing is more of a from  */
+/* i have to consider the id of the item on clicks (buttons(like button))   */
+/* create listing is more of a from  */
+
+
+/* log-in css*/
+
+.form-container {
+    display: flex;
+    /* flex-direction: ; */
+    justify-content: center;
+    align-items: center;
+    min-height: 80%;
+
+}
+
+.fc {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 380PX;
+    margin: 0 15px;
+    padding: 0 15px;
+    min-height: 100%;
+    align-content: stretch;
+}
+
+.form-control {
+    border-radius: 5rem;
+}
+
+.btn-primary {
+    width: 100%;
+    border-radius: 5rem;
+    background: black;
+    margin-top: 15px;
+}
+
+.btn-primary:hover {
+    background: darkblue;
+}
+
+.span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10px 0;
+
+
+}
+
+.span>hr {
+    border-top: 1px solid #3e3f3f;
+    width: 40%;
+
+}
+
+.form-container>div>a,
+.form-container>div>form>a {
+    border-color: white;
+    font-weight: 500;
+}
+
+.form-container>div>a:hover,
+.form-container>div>form>a:hover {
+    border-color: white;
+    color: black;
+    background: white;
+
+}
+
+
+
+
+footer {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    background: white;
+    height: 60px;
+
+}
+
+footer>div {
+
+    width: 330px;
+    scroll-behavior: smooth;
+    justify-content: center;
+
+}
+
+footer>div>ul {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+}
+
+footer>div>ul>li {
+    list-style-type: none;
+    margin: auto;
+}
+
+footer>div>ul>li>a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+/*adding small touches to the register page*/
+
+.writing {
+    display: flex;
+    justify-content: start;
+    padding: 5px;
+    margin: auto;
+
+}
+
+
+
+/* active list*/
+
+.active-container {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 13px;
+
+
+
+}
+
+.active-container>a {
+    padding-bottom: 1px;
+}
+
+.active-list {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+
+    background-color: white;
+    /*border: rgb(2, 2, 2) solid 1px;*/
+    border-radius: 15px;
+    height: 280px;
+    width: 160px;
+}
+
+.img {
+    flex: 1;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden
+}
+
+img {
+
+    max-width: 100%;
+    max-height: 100%;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.bottom {
+
+    /* fill the whole space*/
+    max-height: 100%;
+    max-width: 100%;
+    /* flex attributes*/
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    /* padding */
+    padding-left: 5px;
+    color: black;
+}
+
+.bottom>h4 {
+    font-size: medium;
+}
+
+h6 {
+    font-size: x-small;
+}
+
+.bottom>button {
+    border-radius: 10px;
+}
+
+/* the listing attributes*/
+
+.listing-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.listing-container>image {
+    flex: 1;
+    max-height: 500px;
+    max-width: 100%;
+
+}
+
+.listing-bottom {
+    flex: 2;
+    padding-left: 10px;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.bid {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.bid>button,
+input {
+    width: auto;
+    border-radius: 15px;
+    padding-left: 10px;
+    border-color: white;
+}
+
+.bid>button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* list-style-type:disc; */
+
+
+/* create listing attributes*/
+
+
+.comments-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.comment {
+    border: white 1px solid;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 15px;
+    width: 200px;
+    height: 100%;
+}
+
+.comment>h4 {
+    font-size: small;
+}
+
+
+.nav-item {
+    list-style-type: none;
+}
+
+.textarea {
+    width: -webkit-fill-available;
+    background: fixed;
+    color: #989898;
+    border-radius: 5px;
+    margin-bottom: 2px;
+
+}
+
+/* .product-info{
+     margin-bottom: 100px;
+ } */
+.item {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}

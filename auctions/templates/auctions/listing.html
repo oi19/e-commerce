@@ -1,0 +1,107 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+<h2>Listing: {{title}}</h2>
+{% if answer == False %}
+<form action="{% url 'watchlist' listing.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Watchlist</button>
+</form>
+{% else %}
+<form action="{% url 'remove' listing.id %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Remove</button>
+</form>
+{% endif %}
+
+<div class="listing-container">
+
+    <div class='image'>
+        <img src={{listing.url}}>
+    </div>
+    <div class="listing-bottom">
+       
+        <h5>{{listing.description}}</h5>
+        <h4><b>Price</b>: {{listing.sb}}$</h4>
+        <h5>Created by:  {{listing.creator}}</h5>
+        {%if listing.win == True%}
+                <h2>CONGRATULATIONS!!! {{winner}} , You Are The Winner Of This Bid</h2>
+        {% else %}
+                {%if creator == True %}
+                       
+                         <form action="{% url 'close' listing.id %}"  method="POST" class="bid">
+                            {% csrf_token %}
+                            <!-- <label>{{n}}bid(s) so far. your bid is the current bid</label>
+                            <input type="number" min="1" placeholder="Bid" name="bid"> -->
+                            <button href="{% url 'close' listing.id %}" id="close" class="btn btn-primary" type="submit"
+                            style="display: block;">Close Bid</button> 
+                        </form>  
+    
+
+                {% else %}
+                         <!-- <h5>{{creator}}</h5> -->
+                        <form action="{% url 'listing' listing.id %}" id="bid-form" method="POST" class="bid">
+                            {% csrf_token %}
+                            <label>{{n}}bid(s) so far. your bid is the current bid</label>
+                            <input type="number" min="1" placeholder="Bid" name="bid">
+                            <h5>{{message}}</h5>
+                            <button class="btn btn-primary" type="submit">Place a bid</button>
+                        </form>  
+                {% endif %}
+  
+        {% endif %}
+ 
+      
+
+
+      
+
+        <div class="product-info">
+            <h4>Details</h4>
+            <ul>
+                <li>Listed by: </li>
+                <li>Category : {{listing.category}}</li>
+                <li>Comments</li>
+
+                <div class='comments-container'>
+                    {%for comment in comments %}
+                    <div class="comment">
+                        <h4>@{{comment.username}}</h4>
+                        <p>{{comment.comment}}</p>
+                    </div>
+                </div>
+                {%endfor%}
+
+            </ul>
+            <ul>
+                <form action="{% url 'comments' listing.id %}" class="bid" method="POST">
+                    {% csrf_token %}
+                    <textarea class='textarea' placeholder="write a comment" name="comment"></textarea>
+                    <button type="submit">Send review</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!-- <script>
+const id = eval(document.querySelector('#id').innerHTML)
+console.log(id)
+fetch(`listing/${id}`)
+    .then()
+    if (creator == 'yes') {
+        
+        document.querySelector('#bid-form').style.display = 'none'
+        document.querySelector('#close').style.display = 'block'
+    }
+    else {
+        if (won == yes) {
+            document.querySelector('.win').style.display = 'block'
+            document.querySelector('#bid-form').style.display = 'none'
+        }
+
+    }
+</script> -->
+{% endblock %}

@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Auctions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'auctions/style/styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="nav-auth">
+            {% if user.is_authenticated %}
+            Signed in as <strong>{{ user.username }}</strong>.
+            {% else %}
+            Not signed in.
+            {% endif %}
+        </div>
+        <div class="nav-links1">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cat' %}">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'watchlist' 0 %}">Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create' %}">Create Listing</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-links2">
+            <ul class="nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="dropdown-show">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span
+                        class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'register' %}" target='blank'>Active Listings</a></li>
+                    <li><a href="{% url 'register' %}" target='blank'>Categories</a></li>
+                    <li><a href="{% url 'register' %}" target='blank'>Watchlist</a></li>
+                    <li><a href="{% url 'register' %}" target='blank'>Create Listing</a></li>
+                    <hr class="form-hr">
+                    {% if user.is_authenticated %}
+                    <li><a href="https://www.tesla.com/modely" target='blank'>Log out</a></li>
+                    {% else %}
+                    <li><a href="https://www.tesla.com/modely" target='blank'>Log in</a></li>
+                    <li><a href="https://www.tesla.com/modely" target='blank'>Register</a></li>
+                    {% endif %}
+                    <hr class="form-hr">
+                    <li><a href="https://www.tesla.com/modely" target='blank'>Auction</a></li>
+                    <li><a href="https://www.tesla.com/modely" target='blank'>Contact</a></li>
+                </ul>
+            </li>
+        </div>
+
+    </div>
+
+
+    <hr>
+    {% block body %}
+    {% endblock %}
+    <footer>
+        <div>
+            <ul>
+                <li><a href="">Auction</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        </div>
+
+    </footer>
+
+    <!-- <script src="static/auctions/js/main.js"></script> -->
+
+</body>
+
+</html>
